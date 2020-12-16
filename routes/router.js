@@ -4,7 +4,7 @@ import '../auth/passport-config'
 import mongoose from 'mongoose'
 
 
-//models|| schemas
+//models|| schemas//
 
 import slotSchema from '../models/Slot'
 import annoucementCollection from '../models/Announcement'
