@@ -1,0 +1,10 @@
+.deleteevents__list__container{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.411);
+}
+.MuiListItemText-primary{
+    font-weight: 900;
+    color: #000000 !important;
+}
+.MuiTypography-colorTextSecondary{
+    color: rgba(255, 0, 0, 0.555) !important;
+}

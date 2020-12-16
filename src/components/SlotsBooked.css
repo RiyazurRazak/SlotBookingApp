@@ -1,0 +1,16 @@
+.slotsbooking__btns{
+    padding: 15px 35px;
+    border-radius: 20%;
+    background-color: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+    outline: none;
+}
+.slotbooked__container{
+    margin-bottom: 30px;
+    height: 500px;
+    width: 100%;
+}

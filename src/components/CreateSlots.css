@@ -1,0 +1,31 @@
+.createslot__illustration__container{
+    text-align: center;
+}
+.createslot__illustration{
+    width: 70%;
+    height: 150px;
+}
+.createslot__timepicker > div{
+    margin-right: 30px;
+}
+.createslot__textfield{
+    margin-top: 30px;
+}
+.createslot__title{
+    color: #000000;
+}
+.createslots__btns{
+
+    padding: 20px 45px;
+    border-radius: 10%;
+    background-color: rgba(0, 128, 0, 0.568);
+    box-shadow:  20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+    outline: none;
+}
+.MuiPickersToolbar-toolbar{
+    background-color: #121212 !important;
+}

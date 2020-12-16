@@ -1,0 +1,38 @@
+.bookinginnerlist__container{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #b6b4b4a6;
+}
+.bookinginnerlist__btns{
+    background-color: rgba(35, 180, 35, 0.623);
+    padding: 16px 36px;
+    border-radius: 25%;
+    font-weight: 900;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 20px 0;
+    box-shadow:  20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+.bookinginnerlist-booked >p{
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+.booklist__bookedby{
+    text-decoration: none !important;
+}
+.bookinglistinner-btn-booked{
+    filter: blur(1px);
+    pointer-events: none;
+    background-color: rgba(255, 0, 0, 0.562);
+}
+
+
+@media only screen and (max-width: 620px){
+    .bookinginnerlist__container{
+        flex-flow: column;
+    } 
+    .bookinginnerlist__btns{
+        padding: 10px 20px;
+    }
+}

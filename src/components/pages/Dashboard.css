@@ -1,0 +1,55 @@
+.dashboard__container{
+    margin-top: 60px;
+    min-height: 100vh;
+}
+.dashboard__list{
+    min-height: 100vh !important;
+    border-right: 1px solid #7a787886;
+    overflow-wrap: break-word;
+    border-bottom: 1px dashed #7a78787e;
+}
+.dasboard-inner{
+    padding: 30px;
+}
+.Mui-selected{
+    background-color: #dfdfdf75 !important;
+}
+.dashboard__icon{
+    color: #050505 !important;
+}
+.dashboard__text{
+    color: #080808!important;
+}
+.dashboard__divider{
+    background-color: #817c7c7e !important;
+}
+.dashboard__link{
+    text-decoration: none !important;
+    background: none !important;
+}
+.dashboard__user_container{
+    float: right;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.dashboard__username ,.dashboard__credentialName{
+    color: aliceblue;
+}
+.dashboard__credential{
+    float: left;
+    margin-left: 20px;
+}
+.dashboard__logoutBtn{
+    color: aliceblue !important;
+}
+.dashboard__footer{
+    margin-top: 80px;
+}
+
+@media only screen and (max-width: 950px){
+    .dashboard__list{
+        min-height: auto !important;
+    }
+
+}

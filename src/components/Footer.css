@@ -1,0 +1,21 @@
+.footer{
+    font-weight: 700;
+    color: #808080;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none !important;
+    padding: 20px 0;
+    border-top: 1px solid #8080803f;
+}
+.footer__2 >a{
+    color: #808080 !important;
+}
+
+
+@media only screen and (max-width: 650px){
+
+    .footer{
+        flex-flow: column;
+        text-align: center;
+    }
+} 

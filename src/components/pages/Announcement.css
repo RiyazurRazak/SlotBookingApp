@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.announcement__illustration__container{
+    text-align: center;
+    margin-top: 20px;
+   
+}
+.announcement__illustration__container >h3{
+    font-family: 'Satisfy', cursive !important;
+}
+.announcement__illustration{
+    width: 50%;
+    height: 200px;
+    pointer-events: none;
+}
+.home__announcement_container{
+    margin: 20px;
+}
+.announcement__btns{
+    padding: 15px 35px;
+    border-radius: 20%;
+    background-color: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+    outline: none;
+}

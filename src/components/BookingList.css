@@ -1,0 +1,22 @@
+.booklist__center{
+    margin: auto 10px !important; 
+}
+.bookinglist__faculty_avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.booklist__title{
+    width: 50%;
+    overflow-wrap: break-word;
+}
+.accortation__details{
+    flex-flow: column;
+}
+
+
+@media only screen and (max-width: 620px){
+    .booklist__center{
+        margin: 10px !important; 
+    }  
+}
