@@ -1,8 +1,9 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import './BookingList.css'
 import Axios from 'axios'
-import {useSelector}from 'react-redux'
 
+import {useSelector}from 'react-redux'
+import {socket} from './pages/Booking'
 
 //ui
 import Accordion from '@material-ui/core/Accordion'
@@ -30,6 +31,7 @@ function BookingList({title , key}) {
     const [isLoading , setIsLoading] = useState(false)
     const [slots , setSlots] = useState([])
     const [alreadyBooked , setAlreadyBooked] = useState(false)
+    const [isEmmit, setIsEmmit] = useState(false)
     const loggedUser = useSelector(state => state['userReducer'])
 
     const loadSlotsHandller = async()=>{
@@ -39,22 +41,33 @@ function BookingList({title , key}) {
             setIsLoading(false)
         })
     }
+        
+    useEffect(()=>{
+        if(isEmmit){
+            console.log("res")
+           socket.on("response",data=>{
+            if(data.isAlreadyBooked){
+              setAlreadyBooked(true) 
+              setIsEmmit(false)
+            }else{
+             setSlots(data)
+             setIsLoading(false)
+             setIsEmmit(false)
+            }
+        })
+    }
+    },[isEmmit])
+
+     
+ 
 
     const slotDetails = (slotId)=>{
-        
-        Axios.patch("/api/booking", {
+        socket.emit("booking", {
             collectionName:title,
             slotId: slotId,
             bookedBy: loggedUser.name
-        }).then((res)=> { 
-          if(res.data.isAlreadyBooked){
-            setAlreadyBooked(true)
-          }
-          else {
-             loadSlotsHandller()
-          }
-          
         })
+        setIsEmmit(true)
     }
 
 

@@ -20,7 +20,7 @@ passport.deserializeUser(function(user, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.O_AUTH_CLIENT,
     clientSecret: process.env.O_AUTH_CLIENT_SECRET,
-    callbackURL: "http://localhost:9000/api/redirect/",
+    callbackURL: "http://localhost:9000/api/redirect",
   },
   function(accessToken, refreshToken, profile, done) {
 

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import "./Booking.css"
 import { Helmet } from 'react-helmet'
+import {io} from 'socket.io-client'
 
 
 //ui
@@ -14,10 +15,14 @@ import Footer from '../Footer'
 import Axios from 'axios'
 
 
+const socket = io()
+
+
 function Booking() {
 
     const [list, setList] = useState([])
     const [isLoading , setIsLoading] =useState(true)
+
 
     useEffect(()=>{
       fetchBookingList()
@@ -60,4 +65,4 @@ function Booking() {
     )
 }
 
-export default Booking
+export {Booking , socket};

@@ -5,7 +5,7 @@ import AdminRouter from './components/AdminRouter'
 
 //pages
 import Home from './components/pages/Announcement'
-import Booking from './components/pages/Booking'
+import {Booking} from './components/pages/Booking'
 import NotFound from './components/pages/NotFound'
 import StudentsLogin from './components/pages/StudentsLogin'
 import AccessDenied from './components/pages/AccessDenied'

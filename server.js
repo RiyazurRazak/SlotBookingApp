@@ -1,5 +1,6 @@
 import "@babel/polyfill"
 import express from "express"
+import http from 'http'
 import bodyParser from "body-parser"
 import React from "react"
 import ReactDOMServer from 'react-dom/server'
@@ -27,7 +28,7 @@ import mongoose from 'mongoose'
 
 //router
 import routers from './routes/router'
-
+import slotSchema from './models/Slot'
 
 
 //config
@@ -35,7 +36,8 @@ import routers from './routes/router'
 const app = express()
 const PORT = process.env.PORT || 9000
 const  HOST = process.env.YOUR_HOST || '0.0.0.0'
-
+const server = http.createServer(app)
+const io = require('socket.io')(server)
 
 
 //middleware
@@ -65,6 +67,44 @@ mongoose.connection.once("open" , ()=>{
 
 app.use('/api', routers)
 
+
+//ws
+
+io.on('connection', (socket)=>{
+    console.log("a user connected")
+
+    socket.on("booking", data=>{
+        
+        const bookerName = data.bookedBy
+        const collection = data.collectionName
+        const slotId = data.slotId
+        const reqBookingCollection = mongoose.model( collection , slotSchema, collection)
+        reqBookingCollection.find({bookedby: bookerName}, (err, docs)=>{
+          if(docs.length > 0){
+            socket.emit("response", {isAlreadyBooked: true})
+         }
+         else{
+          reqBookingCollection.updateOne({slotnum: slotId}, {
+          bookedby:bookerName,
+          isbooked: true,
+           }, (err, docs)=>{
+           if(err) console.log(err)
+           reqBookingCollection.find({}, (err, docs)=>{
+             io.emit("response", docs)
+          })
+        })
+       }
+  })
+    })
+
+
+
+
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+      });
+})
 
 //default router
 
@@ -109,6 +149,6 @@ ${helmet.meta.toString()}
 })
 
 
-app.listen(PORT ,HOST, ()=>{
+server.listen(PORT ,HOST, ()=>{
     console.log(`server runing in ${PORT}`)
 })

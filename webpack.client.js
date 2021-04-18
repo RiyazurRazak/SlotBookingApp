@@ -16,7 +16,7 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
 module.exports = {
 
     
-    target: "node",
+    target: "web",
     entry: [ 'regenerator-runtime/runtime',"./src/index.js"],
     output:{
         filename: "client_bundle.js",
